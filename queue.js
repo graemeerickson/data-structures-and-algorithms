@@ -12,9 +12,11 @@ class Queue {
   }
 
   printQueue() {
-    let str = '';
-    this.queue.forEach(item => str += item += ' ');
-    return console.log(`queue: ${str}`);
+    const printedQueue = this.queue.reduce((str, next) => {
+      return str += next += ' ';
+    },'');
+
+    return console.log(`Queue: ${printedQueue}`);
   }
 }
 
