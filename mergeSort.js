@@ -1,5 +1,5 @@
 const sorted = (arr1, arr2) => {
-  let tmpArr = [];
+  const tmpArr = [];
   while (arr1.length && arr2.length) {
     arr1[0] <= arr2[0] ? tmpArr.push(arr1.shift()) : tmpArr.push(arr2.shift());
   }
@@ -10,9 +10,9 @@ const sorted = (arr1, arr2) => {
 const mergeSort = arr => {
   if (arr.length <= 1) return arr;
 
-  let mid = Math.floor(arr.length / 2);
-  let left = arr.slice(0, mid);
-  let right = arr.slice(mid);
+  const mid = Math.floor(arr.length / 2);
+  const left = arr.slice(0, mid);
+  const right = arr.slice(mid);
   
   return sorted(mergeSort(left), mergeSort(right));
 }
