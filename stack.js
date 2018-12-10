@@ -10,13 +10,21 @@ class Stack {
   pop() {
     return this.stack.pop();
   }
+
+  printStack() {
+    const printedStack = this.stack.reduce((str, next) => {
+      return str += next += ' ';
+    },'');
+
+    return console.log(`Stack: ${printedStack}`);
+  }
 }
 
 const myStack = new Stack();
-console.log(myStack);
+myStack.printStack();
 myStack.push('graeme');
-console.log(myStack);
+myStack.printStack();
 myStack.push('erickson');
-console.log(myStack);
+myStack.printStack();
 myStack.pop();
-console.log(myStack);
+myStack.printStack();
