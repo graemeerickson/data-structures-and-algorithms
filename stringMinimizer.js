@@ -7,7 +7,7 @@
 
 // Helper functions
 const isIdentifier = char => (/[a-zA-Z]/).test(char);
-const isKnownWord = (word, obj) => obj[word];
+const isKnownWord = (word, obj) => obj.hasOwnProperty(word);
 const getIdentifierValue = (identifier, knownWordsObj, wordIndex) => {
   if (isKnownWord(identifier, knownWordsObj)) {
     return knownWordsObj[identifier];
