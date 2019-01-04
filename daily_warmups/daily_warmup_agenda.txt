@@ -1,0 +1,9 @@
+1. Stack: construct, push, pop, print
+2. Queue: construct, enqueue, dequeue, print
+3. Singly linked list: construct, add, insert after, remove, print
+4. Doubly linked list: construct, add, insert after, remove, print
+5. Binary search tree: construct, add, remove, traverse breadth-first, traverse depth-first
+6. Hash table: construct, hash function, add, search, print
+7. Graph: construct, add vertex, add edge, print
+8. Mergesort
+9. Quicksort
