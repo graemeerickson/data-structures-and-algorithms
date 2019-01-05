@@ -19,14 +19,14 @@ class BinarySearchTree {
 
   insert(currentNode, newVal) {
     if (!currentNode) {
-      return new BinarySearchTreeNode(newVal);
-    }
-
-    if (newVal < currentNode.val) {
+      currentNode = new BinarySearchTreeNode(newVal);
+    } else if (newVal < currentNode.val) {
       currentNode.leftChild = this.insert(currentNode.leftChild, newVal);
     } else {
       currentNode.rightChild = this.insert(currentNode.rightChild, newVal);
     }
+
+    return currentNode;
   }
 
   getMax(currentNode = this.root) {
