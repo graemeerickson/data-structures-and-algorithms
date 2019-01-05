@@ -1,4 +1,4 @@
-const { Stack, Queue, SinglyLinkedList, DoublyLinkedList, BinarySearchTree } = require('./daily_warmup_jan042019');
+const { Stack, Queue, SinglyLinkedList, DoublyLinkedList, BinarySearchTree } = require('./daily_warmup_jan052019');
 
 const testStack = () => {
   console.log('STACK:');
@@ -74,11 +74,11 @@ const testBinarySearchTree = () => {
   myBST.addNode(0);
   myBST.addNode(100);
   console.log(`\nPrinting BST using preorder traversal (root, left, right)...\n`);
-  myBST.printPreOrderTraversal();
+  console.log(myBST.printPreOrderTraversal());
   console.log(`\nPrinting BST using inorder traversal (left, root, right)...\n`);
-  myBST.printInOrderTraversal();
+  console.log(myBST.printInOrderTraversal());
   console.log(`\nPrinting BST using postorder traversal (left, right, root - i.e., children before parents)...\n`);
-  myBST.printPostOrderTraversal();
+  console.log(myBST.printPostOrderTraversal());
   console.log(`\nSearching BST for '1000'...\n`);
   myBST.searchNode(1000);
   console.log(`\nSearching BST for '75'...\n`);
