@@ -202,14 +202,14 @@ class BinarySearchTree {
 
   insert(currentNode, newValue) {
     if (!currentNode) {
-      return new BinarySearchTreeNode(newValue);
-    }
-
-    if (newValue < currentNode.data) {
+      currentNode = new BinarySearchTreeNode(newValue);
+    } else if (newValue < currentNode.data) {
       currentNode.left = this.insert(currentNode.left, newValue);
     } else {
       currentNode.right = this.insert(currentNode.right, newValue);
     }
+
+    return currentNode;
   }
 
   printPreOrderTraversal(currentNode = this.root) {
