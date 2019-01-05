@@ -71,14 +71,16 @@ const testBinarySearchTree = () => {
   myBST.addNode(50);
   myBST.addNode(25);
   myBST.addNode(75);
+  myBST.addNode(0);
+  myBST.addNode(100);
   console.log(`\nPrinting BST using preorder traversal (root, left, right)...\n`);
   myBST.printPreOrderTraversal();
   console.log(`\nPrinting BST using inorder traversal (left, root, right)...\n`);
   myBST.printInOrderTraversal();
   console.log(`\nPrinting BST using postorder traversal (left, right, root - i.e., children before parents)...\n`);
   myBST.printPostOrderTraversal();
-  console.log(`\nSearching BST for '100'...\n`);
-  myBST.searchNode(100);
+  console.log(`\nSearching BST for '1000'...\n`);
+  myBST.searchNode(1000);
   console.log(`\nSearching BST for '75'...\n`);
   myBST.searchNode(75);
 }
