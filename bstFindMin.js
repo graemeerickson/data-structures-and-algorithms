@@ -19,7 +19,7 @@ class BinarySearchTree {
 
   insert(currentNode, newValue) {
     if (!currentNode) {
-      currentNode = BinarySearchTreeNode(newValue);
+      currentNode = new BinarySearchTreeNode(newValue);
     } else if (newValue < currentNode.val) {
       currentNode.leftChild = this.insert(currentNode.leftChild, newValue);
     } else {
