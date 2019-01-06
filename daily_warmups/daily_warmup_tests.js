@@ -67,18 +67,18 @@ const testDoublyLinkedList = () => {
 const testBinarySearchTree = () => {
   console.log('\nBINARY SEARCH TREE:');
   const myBST = new BinarySearchTree();
-  console.log(`\nPopulating BST with values: 50, 25, 75...\n`);
+  console.log(`\nPopulating BST with values: 50, 25, 75...`);
   myBST.addNode(50);
   myBST.addNode(25);
   myBST.addNode(75);
   myBST.addNode(0);
   myBST.addNode(100);
   console.log(`\nPrinting BST using preorder traversal (root, left, right)...\n`);
-  console.log(myBST.printPreOrderTraversal());
+  console.log(myBST.traversePreOrder());
   console.log(`\nPrinting BST using inorder traversal (left, root, right)...\n`);
-  console.log(myBST.printInOrderTraversal());
+  console.log(myBST.traverseInOrder());
   console.log(`\nPrinting BST using postorder traversal (left, right, root - i.e., children before parents)...\n`);
-  console.log(myBST.printPostOrderTraversal());
+  console.log(myBST.traversePostOrder());
   console.log(`\nSearching BST for '1000'...\n`);
   myBST.searchNode(1000);
   console.log(`\nSearching BST for '75'...\n`);
