@@ -1,3 +1,8 @@
+/*
+  Completed: Stack, queue, singly linked list, doubly linked list, binary search tree
+  Did not complete: hash table, graph
+*/
+
 class Stack {
   constructor() {
     this.stack = [];
@@ -251,6 +256,71 @@ class BinarySearchTree {
       postOrderTreeArr.push(currentNode.val);
     }
     return postOrderTreeArr;
+  }
+
+  removeNode(valToRemove) {
+    this.remove(this.root, valToRemove);
+  }
+
+  remove(currentNode, valToRemove) {
+    // 1. empty tree
+    if (!currentNode) return console.log(`${valToRemove} not found (tree is empty).`);
+    
+    // search for the node
+    let parentNode;
+    while (currentNode && (currentNode.val !== valToRemove)) {
+      parentNode = currentNode;
+      if (valToRemove < currentNode.val) {
+        currentNode = currentNode.leftChild;
+      } else {
+        currentNode = currentNode.rightChild;
+      }
+    }
+
+    // 2. searched tree but didn't find value
+    if (!currentNode) {
+      return console.log(`${valToRemove} not found.`)
+    } else if (!currentNode.leftChild && !currentNode.rightChild) {
+      // 3. leaf node (no children)
+      if (currentNode.val < parentNode.val) {
+        parentNode.leftChild = null;
+        return true;
+      } else {
+        parentNode.rightChild = null;
+        return true;
+      }
+    } else if (!currentNode.rightChild) {
+      // 4a. node with one child (left) - link left child to parent of deleted node
+      if (currentNode.leftChild.val < parentNode.val) {
+        parentNode.leftChild = currentNode.leftChild;
+        return true;
+      } else {
+        parentNode.rightChild = currentNode.leftChild;
+        return true;
+      }
+      
+    } else if (!currentNode.leftChild) {
+      // 4b. node with one child (right) - link right child to parent of deleted node
+      if (currentNode.rightChild.val < parentNode.val) {
+        parentNode.leftChild = currentNode.rightChild;
+        return true;
+      } else {
+        parentNode.rightChild = currentNode.rightChild;
+        return true;
+      }
+    } else {
+      // 5. node with two children
+      // establish starting point along right sub-tree
+      let minRight = currentNode.rightChild;
+      // traverse right sub-tree to find smallest value
+      while (minRight.leftChild) {
+        minRight = minRight.leftChild;
+      }
+      // delete smallest value in right sub-tree
+      this.remove(this.root, minRight.val);
+      currentNode.val = minRight.val;
+      return true;
+    }
   }
 }
 
