@@ -11,18 +11,12 @@ const convertRomanNumeralToInt = str => {
     'M': 1000
   }
   
-  const num = str.split('').reduce((accum, current, index) => {
-    let nextChar = str[index + 1];
-    if (conversionObj[current] < conversionObj[nextChar]) {
-      accum -= conversionObj[current];
-    } else {
-      accum += conversionObj[current];
-    }
-    return accum;
+  return str.split('').reduce((accum, current, index) => {
+    conversionObj[current] < conversionObj[str[index + 1]])
+      ? return accum -= conversionObj[current]
+      : return accum += conversionObj[current];
   }, 0);
-
-  return console.log(num);
 }
 
-convertRomanNumeralToInt('CXXIX')  // 129
-convertRomanNumeralToInt('XLIX')  // 49
+console.log(convertRomanNumeralToInt('CXXIX'))  // 129
+console.log(convertRomanNumeralToInt('XLIX'))  // 49
