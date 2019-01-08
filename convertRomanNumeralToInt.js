@@ -1,4 +1,4 @@
-// Given a Roman numeral string, return the integer representation.
+// Given a Roman numeral string, return the integer representation. Assume clean & valid input.
 
 const convertRomanNumeralToInt = str => {
   const conversionObj = {
